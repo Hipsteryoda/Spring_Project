@@ -50,7 +50,7 @@ public class DictionaryService {
                 .collect(Collectors.toList());
     }
 
-    public List<Entry> getWordsThatContainConsecutiveDoubleLetters() {
+    public List<Entry> getWordsThatContainConsecutiveLetters() {
 
         return DictionaryReference.getDictionary()
                 .entrySet()
