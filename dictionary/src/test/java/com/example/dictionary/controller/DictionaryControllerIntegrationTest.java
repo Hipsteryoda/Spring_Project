@@ -70,7 +70,8 @@ public class DictionaryControllerIntegrationTest {
     @Test
     public void testGetWordsThatContainConsecutiveLetters() throws Exception {
         List<Entry> entries = Arrays.asList(new Entry("letter", "definition"));
-        Mockito.when(dictionaryService.getWordsThatContainConsecutiveDoubleLetters()).thenReturn(entries);
+        Mockito.when(dictionaryService.getWordsThatContainConsecutiveLetters()).thenReturn(entries);
+
 
         mockMvc.perform(get("/getWordsThatContainConsecutiveLetters"))
                 .andExpect(status().isOk())

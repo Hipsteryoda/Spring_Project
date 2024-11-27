@@ -41,7 +41,7 @@ The dictionary app has examples of:
 
 The following are instructions on how to complete project 6 for a grade as well as what you can do for extra credit.
 
-###### Dictionary Application
+###### Dictionary Application (DONE)
 
 1. Add a method to the `DictionaryService` that returns all words that end with a certain value.  To do this:
 - Copy the `getWordsStartingWith` method

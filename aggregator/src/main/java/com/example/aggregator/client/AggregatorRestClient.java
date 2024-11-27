@@ -38,6 +38,17 @@ public class AggregatorRestClient {
       .collect(Collectors.toList());
   }
 
+  public List<Entry> getWordsEndingWith(String chars) {
+
+    String uri = "http://localhost:9091/getWordsEndingWith/" + chars;
+
+    ResponseEntity<Entry[]> result = restTemplate.getForEntity(uri, Entry[].class);
+    Entry[] entryArray = result.getBody();
+
+    return Arrays.stream(entryArray)
+      .collect(Collectors.toList());
+  }
+
   public List<Entry> getWordsThatContain(String chars) {
 
     String uri = "http://localhost:9091/getWordsThatContain/" + chars;
@@ -49,9 +60,9 @@ public class AggregatorRestClient {
       .collect(Collectors.toList());
   }
 
-  public List<Entry> getWordsThatContainConsecutiveLetters(String chars) {
+  public List<Entry> getWordsThatContainConsecutiveLetters() {
 
-    String uri = "http://localhost:9091/getWordsThatContainConsecutiveLetters" + chars;
+    String uri = "http://localhost:9091/getWordsThatContainConsecutiveLetters";
 
     ResponseEntity<Entry[]> result = restTemplate.getForEntity(uri, Entry[].class);
     Entry[] entryArray = result.getBody();
